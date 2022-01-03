@@ -1,4 +1,8 @@
 const container = document.querySelector(".wrapper");
+const resetButton = document.querySelector(".reset");
+resetButton.addEventListener('click',() => {
+    clearGrid();
+});
 
 function loadGrid(size){
     container.style.cssText = `grid-template-columns: repeat(${size}, 1fr);`
@@ -18,8 +22,6 @@ function loadGrid(size){
 });
 }
 
-
-
 function clearGrid(){
     const boxes = document.querySelectorAll(".box");
     boxes.forEach((box) => {  
@@ -27,4 +29,5 @@ function clearGrid(){
     });
 }
 
-loadGrid(90);
+//default is 16x16 grid
+loadGrid(16);
