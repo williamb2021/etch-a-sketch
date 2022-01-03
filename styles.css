@@ -1,0 +1,20 @@
+body, html, .wrapper{
+    height: 100%;
+}
+
+
+.wrapper{
+   border: 15px solid red; 
+   border-radius: 15px;
+   display: grid;
+   /* grid-template-columns: repeat(16, 1fr); */
+   
+}
+
+.box{
+    border: 1px solid black; 
+    /* flex:1; */
+    /* flex-basis: 100%; */
+}
+
+
