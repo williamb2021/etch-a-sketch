@@ -2,19 +2,44 @@ body, html, .wrapper{
     height: 100%;
 }
 
+.top-border, .bottom-border{
+    background-color: red;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;      
+    
+}
+
+
+.top-border{
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.title{
+    color: gold;
+    font-size: 40px;
+    font-family: cursive;
+    font-weight: bold;
+    vertical-align: middle;
+}
 
 .wrapper{
-   border: 15px solid red; 
-   border-radius: 15px;
-   display: grid;
-   /* grid-template-columns: repeat(16, 1fr); */
-   
+    border: solid red; 
+    border-width: 0 40px 0;
+    margin: 0;
+    display: grid;    
+    outline-color: black;
+ }
+
+ .bottom-border{
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }
 
-/* .box{
-    border: 1px solid black; 
-    flex:1;
-    flex-basis: 100%; 
+.reset{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
 }
-
- */
