@@ -14,12 +14,12 @@ const colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6',
 		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
 		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
 		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
-const greyScale = ['rgba(0,0,0,0.0)','rgba(0,0,0,0.1)',
-                    'rgba(0,0,0,0.2)','rgba(0,0,0,0.3)',
-                    'rgba(0,0,0,0.4)','rgba(0,0,0,0.5)',
-                    'rgba(0,0,0,0.6)','rgba(0,0,0,0.7)',
-                    'rgba(0,0,0,0.8)','rgba(0,0,0,0.9)',
-                    'rgba(0,0,0,1)'];
+const greyScale = ['rgba(0, 0, 0, 0)','rgba(0, 0, 0, 0.1)',
+                    'rgba(0, 0, 0, 0.2)','rgba(0, 0, 0, 0.3)',
+                    'rgba(0, 0, 0, 0.4)','rgba(0, 0, 0, 0.5)',
+                    'rgba(0, 0, 0, 0.6)','rgba(0, 0, 0, 0.7)',
+                    'rgba(0, 0, 0, 0.8)','rgba(0, 0, 0, 0.9)',
+                    'rgba(0,0,0)'];
 let color = 'black';
 //generates random number between min and max
 let randomIntFromInterval = (min, max) => { // min and max included 
@@ -35,12 +35,33 @@ function loadGrid(size){
         container.appendChild(grid);
     }
     const boxes = document.querySelectorAll(".box");
+    boxes.forEach((box) => box.style.backgroundColor = `rgba(0, 0, 0, 0)`);
     boxes.forEach(box => box.addEventListener('mouseenter',colorMode));
 }
 
+
+function colorMode(){
+    switch(color){
+        case 'rainbow':
+            let i = randomIntFromInterval(0,49);
+            this.style.background = colorArray[i];
+            break;
+        case 'grey':
+            let currentGreyness = greyScale.indexOf(this.style.backgroundColor);
+            if (currentGreyness < greyScale.length-2) {
+                this.style.backgroundColor = greyScale[currentGreyness+1];
+            }
+            break;
+        case 'black':
+            this.style.backgroundColor = 'black';  
+            break;         
+    }
+}
+
+
 function clearGrid(size){
     const boxes = document.querySelectorAll(".box");
-    boxes.forEach((box) => box.style.backgroundColor = `rgba(0, 0, 0, 0.0)`);
+    boxes.forEach((box) => box.style.backgroundColor = `rgba(0, 0, 0, 0)`);
     if (size) {
         loadGrid(size)
     };
@@ -66,24 +87,6 @@ resetButton.addEventListener('click', () => {
 });
 
 
-
-function colorMode(){
-    switch(color){
-        case 'rainbow':
-            let i = randomIntFromInterval(0,49);
-            this.style.background = colorArray[i];
-            break;
-        case 'grey':
-            let j=0;
-            this.style.background = greyScale[j+1];
-            console.log(j);
-            j+=1;
-            break;
-        case 'black':
-            this.style.backgroundColor = 'black';  
-            break;         
-    }
-}
 
 
 
