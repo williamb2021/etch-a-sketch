@@ -4,6 +4,7 @@ const clearButton = document.querySelector(".clear");
 const rainbowButton = document.querySelector(".rainbow");
 const greyButton = document.querySelector(".grey");
 const blackButton = document.querySelector(".black");
+const eraserButton = document.querySelector(".eraser");
 const colorArray = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
 		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
 		  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
@@ -54,7 +55,10 @@ function colorMode(){
             break;
         case 'black':
             this.style.backgroundColor = 'black';  
-            break;         
+            break;     
+        case 'eraser':
+            this.style.backgroundColor = 'white';  
+            break;  
     }
 }
 
@@ -70,6 +74,7 @@ function clearGrid(size){
 blackButton.addEventListener('click', () => color = 'black');
 rainbowButton.addEventListener('click', () => color = 'rainbow');
 greyButton.addEventListener('click', () => color = 'grey');
+eraserButton.addEventListener('click', () => color = 'eraser');
 clearButton.addEventListener('click', () => clearGrid());
 
 
