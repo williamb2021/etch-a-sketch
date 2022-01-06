@@ -48,7 +48,7 @@ function colorMode(){
             break;
         case 'grey':
             let currentGreyness = greyScale.indexOf(this.style.backgroundColor);
-            if (currentGreyness < greyScale.length-2) {
+            if (currentGreyness <= greyScale.length-1) {
                 this.style.backgroundColor = greyScale[currentGreyness+1];
             }
             break;
@@ -91,4 +91,4 @@ resetButton.addEventListener('click', () => {
 
 
 //default is 16x16 grid
-loadGrid(16);
+loadGrid(128);
