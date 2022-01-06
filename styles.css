@@ -38,10 +38,9 @@ body{
     
 }
 
-.reset, .rainbow, .grey{
+button{
     border-radius: 50%;
     height: 60px;
     width: 60px;
 }
-
 
