@@ -1,45 +1,47 @@
-body, html, .wrapper{
-    height: 100%;
-}
-
-.top-border, .bottom-border{
-    background-color: red;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;      
-    
-}
-
-
-.top-border{
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
+body{
+    display:flex;
+    flex-direction: column;
+    background-color: grey;
 }
 
 .title{
     color: gold;
     font-size: 40px;
-    font-family: cursive;
     font-weight: bold;
-    vertical-align: middle;
+    text-align: center;  
 }
 
-.wrapper{
-    border: solid red; 
-    border-width: 0 40px 0;
-    margin: 0;
+.main{
+    height: 50vw;
+    width: 50vw;
+    max-height: var(--content-width);;
+    max-width: var(--content-width);
+    margin: 30px auto;
+    position: relative;
+}
+
+.sketch-box{
+    background-color: white;
     display: grid;    
-    outline-color: black;
- }
-
- .bottom-border{
-    border-bottom-left-radius: 15px;
-    border-bottom-right-radius: 15px;
+    height: 100%;
+    width: 100%;
 }
 
-.reset{
+.buttons{
+    display:flex;
+    justify-content: space-evenly;
+    height: 50vw;
+    width: 50vw;
+    max-height: var(--content-width);;
+    max-width: var(--content-width);
+    margin: 30px auto;
+    
+}
+
+.reset, .rainbow, .grey{
     border-radius: 50%;
     height: 60px;
     width: 60px;
 }
+
+
