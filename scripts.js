@@ -91,9 +91,5 @@ resetButton.addEventListener('click', () => {
         }
 });
 
-
-
-
-
 //default is 16x16 grid
-loadGrid(128);
+loadGrid(16);

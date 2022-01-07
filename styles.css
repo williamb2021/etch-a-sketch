@@ -9,6 +9,7 @@ body{
     font-size: 40px;
     font-weight: bold;
     text-align: center;  
+    vertical-align: middle;
 }
 
 .main{
@@ -18,6 +19,10 @@ body{
     max-width: var(--content-width);
     margin: 30px auto;
     position: relative;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    padding:1em;
+    line-height:1.5em;
+    background:hsla(67, 95%, 95%, 1);
 }
 
 .sketch-box{
@@ -38,9 +43,28 @@ body{
     
 }
 
+.rainbow{
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+}
+
+.black{
+    background-color: black;
+    color: white;
+}
+
+.grey {
+    background-color: darkgray;
+}
+
+.eraser{
+    background-color: #e2aeb4 ;
+}
+
+
 button{
-    border-radius: 50%;
+    border-radius: 75%;
     height: 60px;
     width: 60px;
+    border: solid grey;
 }
 
